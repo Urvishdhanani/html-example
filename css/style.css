@@ -1,0 +1,418 @@
+
+/* ================= BASE ==================== */
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.bx {
+  font-size: 2.5rem;
+}
+.container {
+  padding: 0 2rem;
+}
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  background-color: black;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1rem 2rem;
+}
+.company-logo {
+  font-size: 2.5rem;
+  background-color: blue;
+  color: rgb(228, 83, 58);
+  -webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.nav-items {
+  display: flex;
+}
+.nav-item {
+  margin: 0 2rem;
+}
+.nav-link {
+  font-size: 1.1rem;
+  letter-spacing: 0.05rem;
+  position: relative;
+  background-color: blue;
+  color:  rgb(228, 83, 58);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-link::before {
+  content: "";
+  background-color:  blue;
+  color:  rgb(228, 83, 58);
+  width: 100%;
+  height: 0.05rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 150ms;
+}
+.nav-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+main{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider{
+  width: 800px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slides{
+  width: 500%;
+  height: 500px;
+  display: flex;
+}
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img{
+  width: 800px;
+  height: 500px;
+}
+
+/*css for manual slide navigation*/
+
+.navigation-manual{
+  position: absolute;
+  width: 800px;
+  margin-top: -40px;
+  display: flex;
+  justify-content: center;
+}
+
+.manual-btn{
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 40px;
+}
+
+.manual-btn:hover{
+  background: white;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+  margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+  margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+  margin-left: -60%;
+}
+
+/*css for automatic navigation*/
+
+.navigation-auto{
+  position: absolute;
+  display: flex;
+  width: 800px;
+  justify-content: center;
+  margin-top: 460px;
+}
+
+.navigation-auto div{
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+  margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background: black;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background: black;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background: black;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+  background: black;
+}
+
+
+.d1{
+  float: left;
+  text-align: center;
+  width: 36%;
+  margin-left: 20px;
+  height: 400px;
+  padding-top: 300px;
+}
+.d2{
+  text-align: center;
+  padding-top: 300px;
+  float: right;
+  width: 60%;
+  height: 400px;
+  margin-right: 20px;
+  color:white;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-right: 20px ;
+  margin-left: 20px;
+  width: 100%;
+}
+.grid-item{
+  font-size: 30px;
+  text-align: center;
+  height: 200px;
+  margin: 20px;
+}
+
+
+.contact 
+{
+	position: relative;
+	min-height: 100vh;
+	padding: 50px 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: black;
+}
+.contact .content 
+{
+	max-width: 800px;
+	text-align: center;
+}
+.contact .content h2 
+{
+	font-size: 3em;
+	color: #fff;
+	font-weight: 500;
+}
+.contact .content p 
+{
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: 300;
+}
+.container 
+{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	margin-top: 30px;
+}
+.container .contactInfo 
+{
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+}
+.container .contactInfo .box 
+{
+	position: relative;
+	padding: 20px 0;
+	display: flex;
+	cursor: pointer;
+}
+.container .contactInfo .box .icon 
+{
+	min-width: 60px;
+	height: 60px;
+	background: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.75em;
+	transition: 0.5s;
+}
+.container .contactInfo .box:hover .icon 
+{
+	background: #00bcd4;
+	color: white;
+}
+.container .contactInfo .box .text 
+{
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+	font-size: 1.1em;
+	color: #fff;
+	font-weight: 300;
+}
+.container .contactInfo .box .text h3 
+{
+	font-weight: 500;
+	color: #00bcd4;
+}
+.container .contactInfo .txt
+{
+	color: white;
+	margin-top: 50px;
+	font-weight: 500;
+	padding-left: 10px;
+	border-left: 50px solid red;
+	line-height: 1em;
+}
+.sci 
+{
+	position: relative;
+	display: flex;
+	gap: 30px;
+	margin: 20px 0;
+}
+.sci li 
+{
+	list-style: none;
+}
+.sci li a 
+{
+	color:white;
+	font-size: 2em;
+	transition: 0.5s;
+}
+.sci li a:hover 
+{
+	color: #00bcd4;
+}
+
+
+.container .contactForm
+{
+	position: relative;
+	width: 40%;
+	background:black;
+	min-height: 100px;
+	padding: 60px;
+} 
+.container .contactForm h2 
+{
+	font-size: 2em;
+	color: white;
+	font-weight: 500;
+}
+.container .contactForm .inputBox 
+{
+	position: relative;
+	width: 100%;
+	margin-top: 20px;
+}
+.container .contactForm .inputBox input, 
+.container .contactForm .inputBox textarea 
+{
+	width: 100%;
+	padding: 5px 0;
+	font-size: 1.1em;
+	margin: 10px 0;
+	border: none;
+	border-bottom: 2px solid #333;
+	outline: none;
+	resize: none;
+}
+.container .contactForm .inputBox span 
+{
+	position: absolute;
+	left: 0;
+	pointer-events: none;
+	padding: 5px 0;
+	margin: 10px 0;
+	font-size: 1.1em;
+	color: white;
+	transition: 0.5s;
+}
+.container .contactForm .inputBox input:focus ~ span, 
+.container .contactForm .inputBox textarea:focus ~ span,
+.container .contactForm .inputBox input:valid ~ span, 
+.container .contactForm .inputBox textarea:valid ~ span 
+{
+	color: red;
+	font-size: 0.9em;
+	transform: translateY(-20px);
+}
+.container .contactForm .inputBox input[type="submit"]
+{
+	width: 100px;
+	background: #00bcd4;
+	color: white;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	font-size: 1.1em;
+	font-weight: 500;
+}
+
+/* lets make it responsive */
+@media (max-width: 991px)
+{
+	.contact
+	{
+		padding: 50px;
+	}
+	.container
+	{
+		flex-direction: column;
+	}
+	.container .contactInfo,
+	.container .contactForm
+	{
+		width: 100%;
+	}
+	.container .contactForm
+	{
+		padding: 50px 30px;
+	}
+}
